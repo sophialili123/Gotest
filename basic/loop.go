@@ -1,4 +1,4 @@
-package main
+package basic
 
 /**
 	数字十进制进行转换
