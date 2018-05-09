@@ -1,4 +1,4 @@
-package basic
+package main
 
 /**
 	内建变量类型
