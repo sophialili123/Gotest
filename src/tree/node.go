@@ -24,15 +24,33 @@ func CreateNode(value int) *Node {
 	return &Node{Value: value}
 }
 
+//func (node *Node)Traverse()  {
+//	if node == nil{
+//		return
+//	}
+//
+//	node.Left.Traverse()
+//	node.Print()
+//	node.Right.Traverse()
+//
+//}
+
 func (node *Node)Traverse()  {
+	node.TraverseFunc(func(node *Node) {
+		node.Print()
+	})
+	fmt.Println()
+}
+
+//递归遍历二叉树
+func (node *Node) TraverseFunc (f func(*Node)){
 	if node == nil{
 		return
 	}
 
-	node.Left.Traverse()
-	node.Print()
-	node.Right.Traverse()
-
+	node.Left.TraverseFunc(f)
+	f(node)
+	node.Right.TraverseFunc(f)
 }
 
 //func main() {

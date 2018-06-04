@@ -38,4 +38,12 @@ func main() {
 	myRoot := myTreeNode{&root}
 	myRoot.postOrder()
 	fmt.Println()
+
+	//计数器的作用
+	root.Traverse()
+	nodeCount :=0
+	root.TraverseFunc(func(node *tree.Node) {
+		nodeCount ++
+	})
+	fmt.Println("Node count:",nodeCount)
 }
