@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"bufio"
-
+	"fib"
 )
 
 //defer栈，先进后出
@@ -25,6 +25,7 @@ func writeFile(filename string)  {
 	}
 	defer file.Close()
 	writer := bufio.NewWriter(file)
+	defer writer.Flush()
 	f:=fib.Fibonacci()
 	for i:=0;i<20 ;i++  {
 		fmt.Fprintln(writer,f())
@@ -33,5 +34,5 @@ func writeFile(filename string)  {
 
 func main() {
 	tryDefer()
-	writeFile("fib.txt")
+	writeFile("gou2p/fib.txt")
 }
