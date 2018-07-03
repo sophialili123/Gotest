@@ -64,6 +64,15 @@ func triangle()  {
 	fmt.Println(c)
 }
 
+/**
+表格测试驱动
+ */
+func calcTriangle(a,b int) int  {
+	var c int
+	c=int(math.Sqrt(float64(a*a +b*b)))
+	return c
+}
+
 func consts()  {
 	//不一定要求全部大写，因为大小写在Go语言当中是有一定含义的
 	//常量可以作为各种类型使用，下面就不需要强制类型转换了
